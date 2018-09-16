@@ -1,0 +1,64 @@
+
+body {
+	padding: 10px;
+}
+
+#padding {
+	height: 10vw;
+}
+
+#main {
+	max-width: 960px;
+	margin: auto;
+	display: flex;
+}
+
+#left {
+	min-width: 200px;
+	max-width: 300px;
+	padding-right: 10px;
+}
+
+
+#right {
+	min-width: 300px;
+	padding-left: 10px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#subheader {
+	font-size: 14px;
+}
+
+.paper-section-type {
+}
+
+.paper-status {
+	font-style: italic;
+}
+
+
+.download-pdf {
+	font-size: 12px;
+	font-family: 'Montserrat', sans-serif; 
+	color: darkred;
+}
+
+.name-title {
+	font-family: 'Montserrat', sans-serif;
+}
+
+#quick-info {
+	font-family: 'Montserrat', sans-serif;
+	color: gray;
+	font-size: 14px;
+}
+
+.style1 {
+	font-size: 2em;
+}
+
+
+a {
+	text-decoration: none; color: gray;
+}
