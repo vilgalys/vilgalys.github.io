@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>NASS data demo</title>
+	<link rel="icon" href="favicon.png">
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Raleway|Montserrat" rel="stylesheet">
+	<link rel='stylesheet' id='thing'  href='visualization.css' type='text/css' media='all' />
+</head>	
+<body>
+	<div id="main">
+		<p>
+			<span>
+				<input type="radio" name="crop" value="corn" onclick="handleClick(this);" checked > corn
+				<input type="radio" name="crop" value="hay" onclick="handleClick(this);"> hay
+				<input type="radio" name="crop" value="oats" onclick="handleClick(this);"> oats
+				<input type="radio" name="crop" value="sorghum" onclick="handleClick(this);"> sorghum
+				<input type="radio" name="crop" value="soybeans" onclick="handleClick(this);"> soybeans
+				<input type="radio" name="crop" value="wheat" onclick="handleClick(this);"> wheat
+				<input type="radio" name="crop" value="herfindahl" onclick="handleClick(this);" > index 
+				<input class = "checkbox" type="checkbox" id="norm" onclick="handleCheck(this)" checked> normalize
+			</span>
+			<padding />
+			<span>
+				<img id="img" />	
+			</span> 
+			<padding />
+			<span>
+				<input type="range" min="1950" max="2015" value="1950" class="slider" id="myRange">
+			</span>
+		</p>
+	</div>
+</body>
+</html>
+
+<script>
+	var slider = document.getElementById("myRange");
+	var val = slider.value;
+	var sub_folder = 'norm_crops'
+	var crop = 'corn'
+	var base_str = "./images/" + sub_folder + "/" + crop + "/"
+	document.getElementById("img").src = base_str + val + ".png";
+	slider.oninput = function() {
+		document.getElementById("img").src = base_str + this.value + ".png";
+	}
+	function changeImage(){
+		if (crop == "herfindahl") {
+			base_str = "./images/" + crop + "/"
+		} else {
+			base_str = "./images/" + sub_folder + "/" + crop + "/"
+		}
+		document.getElementById("img").src = base_str + slider.value + ".png";
+	}
+	function handleClick(radio) {
+		crop = radio.value;
+		changeImage();
+	}
+	function handleCheck(button) {
+		if (button.checked == true){
+			sub_folder = 'norm_crops';
+		} else {
+			sub_folder = 'crops';
+		}
+		changeImage();
+	}
+</script>
+
