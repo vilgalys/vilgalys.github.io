@@ -57,6 +57,9 @@ ul li:before {
   position: absolute;
   margin-left: -20px;
 }
+ul li{
+	margin-bottom: 5px;
+}
 
 p {
 	margin-block-end: 0em;
